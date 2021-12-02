@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../style/create-cards.css">
+    <title>Create Card</title>
+</head>
+
+<body>
+    <div id="app" v-cloak>
+        <!-- NAVBAR -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-warning">
+            <div class="container-fluid">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./accounts.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-house-fill" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd"
+                                        d="m8 3.293 6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5z" />
+                                    <path fill-rule="evenodd"
+                                        d="M7.293 1.5a1 1 0 0 1 1.414 0l6.647 6.646a.5.5 0 0 1-.708.708L8 2.207 1.354 8.854a.5.5 0 1 1-.708-.708L7.293 1.5z" />
+                                </svg>
+                                Home
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link d-block " href="./cards.html">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                    class="bi bi-credit-card-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1H0V4zm0 3v5a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7H0zm3 2h1a1 1 0 0 1 1 1v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1a1 1 0 0 1 1-1z" />
+                                </svg>
+                                Card
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <main class="container-fluid  marg">
+            <!-- CREACION DE TARJETAS -->
+            <div class="mt-5 mg">
+                <form class="bg-dark">
+                    <div class="mb-5">
+                        <label for="Debit" class="form-check-label text-white">Debit</label>
+                        <input type="radio" v-model="tipo" class="form-check-input textoCentrado" name="choose" id="Debit"
+                            value="DEBIT">
+                        <label for="Credit" class="form-check-label text-white">Credit</label>
+                        <input type="radio" v-model="tipo" name="choose" class="form-check-input" id="Credit"
+                            value="CREDIT">
+                    </div>
+                    <div>
+                        <label for="Silver" class="form-check-label text-white"> Silver</label>
+                        <input type="radio" v-model="color" name="color" class="form-check-input textoCentrado" id="Silver"
+                            value="SILVER">
+                        <label for="Gold" class="form-check-label text-white">Gold</label>
+                        <input type="radio" name="color" v-model="color" class="form-check-input textoCentrado" id="Gold"
+                            value="GOLD">
+                        <label for="Titanium" class="form-check-label text-white">Titanium</label>
+                        <input type="radio" name="color" v-model="color" class="form-check-input" id="Titanium"
+                            value="TITANIUM">
+                    </div>
+                    <button type="button" @click="creAte" class="btn btn-secondary">
+                        Create
+                    </button>
+                </form>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://unpkg.com/vue@next"></script>
+    <script src="../script/create-card.js"></script>
+
+</body>
+
+</html>

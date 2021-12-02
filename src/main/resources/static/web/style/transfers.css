@@ -1,0 +1,16 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.contenedor {
+  width: 360px;
+  height: 400px;
+  margin: 8% auto;
+  background:rgb(169, 169, 207);
+  border-radius: 5px;
+  position: relative;
+}
+[v-cloak] {
+  display: none;
+}

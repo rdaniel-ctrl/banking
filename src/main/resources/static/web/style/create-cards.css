@@ -1,0 +1,17 @@
+.marg {
+  padding-right: 5rem;
+  padding-left: 5rem;
+  height: 90vh;
+  /* border: 1px black solid; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mg{
+    width: 50%;
+    border: 1px solid black;
+}
+.textoCentrado {
+  margin-right: 2rem;
+}

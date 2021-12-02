@@ -1,0 +1,59 @@
+/* referencias globales */
+/* * {
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box;
+} */
+:root {
+  --main-color1: rgb(196, 32, 114);
+  --main-color2: rgb(67, 65, 83);
+}
+/* color del head */
+.colorprincipal {
+  background: linear-gradient(to top, var(--main-color1), var(--main-color2));
+  min-height: 4.5rem;
+  text-align: center;
+}
+/* limites para poner el footer abajo */
+#app {
+  height: 100vh;
+  width: 100%;
+  padding: 0;
+}
+main {
+  width: 100%;
+  margin: 0;
+  min-height: 79%;
+}
+/* distancias para el div de los valores de las cuentas */
+.pad {
+  padding-bottom: 1rem;
+}
+/* img */
+img {
+  height: 2rem;
+  width: 2rem;
+}
+/* footer */
+footer {
+  background-color: rgb(196, 32, 114) !important;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  height: 40px;
+  color: white;
+}
+/* color de type */
+.red {
+  color: red;
+}
+.green {
+  color: green;
+}
+.title a {
+  text-decoration: none;
+  color: white;
+}
+[v-cloak] {
+  display: none;
+}
