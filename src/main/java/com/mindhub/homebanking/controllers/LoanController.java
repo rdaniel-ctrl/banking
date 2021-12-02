@@ -74,7 +74,7 @@ public class LoanController{
             return new ResponseEntity<>("the amount was exceeded",HttpStatus.FORBIDDEN);
         }
 
-        if(loanApplicationDTO.getAmount() < 100) return new ResponseEntity<>("amount must be greater than 100",HttpStatus.FORBIDDEN);
+        if(loanApplicationDTO.getAmount() < 0) return new ResponseEntity<>("amount must be greater than 100",HttpStatus.FORBIDDEN);
 
         if (cLient.getLoans().stream().anyMatch(loan -> loan.getName().equals(loanApplicationDTO.getName()))){
             return new ResponseEntity<>("you have a loan of the same type" + " "+loanApplicationDTO.getName(),HttpStatus.FORBIDDEN);
