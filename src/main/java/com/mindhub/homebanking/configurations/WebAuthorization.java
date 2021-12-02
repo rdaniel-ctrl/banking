@@ -21,10 +21,10 @@ public class WebAuthorization  extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception{
         http.authorizeRequests()
-                .antMatchers("/web/index.html/**","/web/style/**").permitAll()
+                .antMatchers("/web/index.html","/web/style/**").permitAll()
                 .antMatchers(HttpMethod.POST,"/api/clients").permitAll()
                 .antMatchers(HttpMethod.POST,"api/**").hasAuthority("CLIENT")
-                .antMatchers("/rest/**","/h2-console/**","/web/manager.html/**","/web/ADMIN/loans.html").hasAuthority("ADMIN")
+                .antMatchers("/rest/**","/h2-console/**","/manager.html/**","/web/ADMIN/loans.html").hasAuthority("ADMIN")
                 .antMatchers("/web/html/**").hasAuthority("CLIENT");
 
         http.formLogin()
