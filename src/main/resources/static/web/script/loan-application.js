@@ -6,7 +6,7 @@ const app = Vue.createApp({
       name: "",
       payments: [],
       client: [],
-      balance: "",
+      balance: 0,
       cuota: "",
       montototal: 0,
       cuenta: "",
