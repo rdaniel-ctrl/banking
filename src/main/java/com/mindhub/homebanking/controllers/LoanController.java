@@ -54,7 +54,8 @@ public class LoanController{
         Client cLient = clientService.getdByEmail(authentication.getName());
         Account account1 = accountRepository.findBynumber(loanApplicationDTO.getAccount());
 
-        if(loanApplicationDTO.getName().isEmpty()|| loanApplicationDTO.getAmount() == 0|| loanApplicationDTO.getPayment() == 0 ||loanApplicationDTO.getAccount().isEmpty()){
+        if(loanApplicationDTO.getName().isEmpty()|| loanApplicationDTO.getAmount() == 0||
+                loanApplicationDTO.getPayment() == 0 ||loanApplicationDTO.getAccount().isEmpty()){
         return new ResponseEntity<>("fields are empty",HttpStatus.FORBIDDEN);
         }
 
@@ -74,10 +75,10 @@ public class LoanController{
             return new ResponseEntity<>("the amount was exceeded",HttpStatus.FORBIDDEN);
         }
 
-        if(loanApplicationDTO.getAmount() < 0) return new ResponseEntity<>("amount must be greater than 100",HttpStatus.FORBIDDEN);
+        if(loanApplicationDTO.getAmount() < 100) return new ResponseEntity<>("amount must be greater than 100",HttpStatus.FORBIDDEN);
 
         if (cLient.getLoans().stream().anyMatch(loan -> loan.getName().equals(loanApplicationDTO.getName()))){
-            return new ResponseEntity<>("you have a loan of the same type" + " "+loanApplicationDTO.getName(),HttpStatus.FORBIDDEN);
+            return new ResponseEntity<>("you have a loan of  same type" + " "+loanApplicationDTO.getName(),HttpStatus.FORBIDDEN);
         }
 
         if (!loanRepository.findByName(loanApplicationDTO.getName()).getPayments().contains(loanApplicationDTO.getPayment())) {

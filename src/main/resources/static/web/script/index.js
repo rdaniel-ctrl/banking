@@ -19,7 +19,7 @@ const app = Vue.createApp({
         })
         .then((response) => {
           if(email == "admin@mindhub.com"){
-            return window.location.href = "/web/manager.html"
+            return window.location.href = "/manager.html"
           }else{
            return window.location.href = "/web/html/accounts.html"
           }

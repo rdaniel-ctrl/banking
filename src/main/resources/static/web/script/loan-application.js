@@ -33,15 +33,23 @@ const app = Vue.createApp({
       });
     },
     enviarLoans() {
+      console.log(this.name)
+      console.log(this.balance)
+      console.log(this.cuota)
+      console.log(this.cuenta)
       axios
         .post("/api/loans", {
           "name": this.name,
           "amount": this.balance,
           "payment": this.cuota,
           "account": this.cuenta,
+          "percentage":20
         })
         .then((response) => (window.location.href = "/web/html/accounts.html"))
-        .catch(error=> alert(error.response.data))
+        .catch(error=> {
+            alert(error.response.data)
+            console.log(error.response)
+          })
     },
     traerPayments2(){
       if(this.name != ""){

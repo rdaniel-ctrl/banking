@@ -82,7 +82,8 @@ public class CardController {
 
         Card card = cardRepository.findBynumber(cardPaymentDTO.getNumber());
 
-        if (cardPaymentDTO.getNumber().isEmpty()||cardPaymentDTO.getAmount() ==0||cardPaymentDTO.getSecuritycode()== 0||cardPaymentDTO.getDescription().isEmpty()||cardPaymentDTO.getAccount().isEmpty()){
+        if (cardPaymentDTO.getNumber().isEmpty()||cardPaymentDTO.getAmount() ==0||cardPaymentDTO.getSecuritycode()== 0||
+                cardPaymentDTO.getDescription().isEmpty()||cardPaymentDTO.getAccount().isEmpty()){
             return new ResponseEntity<>("invalid data",HttpStatus.FORBIDDEN);
         }
         if(card.getFromDate().isAfter(card.getThruDate())){
@@ -107,7 +108,8 @@ public class CardController {
         double nuevo = account.getBalance() - cardPaymentDTO.getAmount();
         account.setBalance(nuevo);
 
-        Transaction transaction = new Transaction(TransactionType.DEBIT,(double) - cardPaymentDTO.getAmount(),cardPaymentDTO.getDescription(), LocalDate.now(),account.getBalance(),account);
+        Transaction transaction = new Transaction(TransactionType.DEBIT,(double) - cardPaymentDTO.getAmount(),cardPaymentDTO.getDescription(),
+                LocalDate.now(),account.getBalance(),account);
         transactionRepository.save(transaction);
         return new ResponseEntity<>("Create payments",HttpStatus.CREATED);
     }
